@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moving Helper | Find Moving Help</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #172b4d;
+      background: #f8fafc;
+    }
+    header {
+      background: #fff;
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .logo { font-size: 24px; font-weight: bold; }
+    nav a {
+      color: #172b4d;
+      text-decoration: none;
+      margin-left: 18px;
+    }
+    .hero {
+      padding: 85px 6%;
+      text-align: center;
+      background: #eaf1fb;
+    }
+    h1 { font-size: clamp(32px, 5vw, 52px); }
+    .hero p { color: #52647a; font-size: 18px; }
+    .search {
+      max-width: 650px;
+      margin: 30px auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    input, button {
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+    input {
+      flex: 1;
+      min-width: 180px;
+      border: 1px solid #cbd5e1;
+    }
+    button {
+      background: #172b4d;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover { background: #304e78; }
+    section { padding: 60px 6%; text-align: center; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+    }
+    footer {
+      background: #172b4d;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Moving Helper</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="mailto:hello@example.com">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Find Reliable Moving Help</h1>
+      <p>Compare moving helpers and find services for your next move.</p>
+      <form class="search" id="searchForm">
+        <input id="zip" type="text"
+          inputmode="numeric"
+          pattern="[0-9]{5}"
+          maxlength="5"
+          placeholder="Enter your ZIP code"
+          aria-label="ZIP code" required>
+        <button type="submit">Find Movers</button>
+      </form>
+    </div>
+
+    <section id="services">
+      <h2>Moving Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Moving Labor</h3>
+          <p>Help loading and unloading your rental truck or container.</p>
+        </div>
+        <div class="card">
+          <h3>Movers + Truck</h3>
+          <p>Explore moving teams with transportation options.</p>
+        </div>
+        <div class="card">
+          <h3>Packing Services</h3>
+          <p>Get assistance packing and preparing for moving day.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <h2>How Moving Helper Works</h2>
+      <p>1. Enter your location</p>
+      <p>2. Explore moving services</p>
+      <p>3. Request a quote</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Moving Helper. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("searchForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+        const zip = document.getElementById("zip").value;
+        window.location.href =
+          "find-movers.html?zip=" + encodeURIComponent(zip);
+      });
+  </script>
+</body>
+</html>
